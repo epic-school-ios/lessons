@@ -1,1 +1,1 @@
-# lessons-lesson_1
+# lesson-1
