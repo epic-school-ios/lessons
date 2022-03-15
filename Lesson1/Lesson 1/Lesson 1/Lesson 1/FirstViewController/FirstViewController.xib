@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FirstViewController" customModule="Lesson_1" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="LWv-Wa-Pl7"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W0o-EV-CAL">
+                    <rect key="frame" x="20" y="30" width="374" height="31"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Простой MVC"/>
+                    <connections>
+                        <action selector="simpleMVCButtonDidTap:" destination="-1" eventType="touchUpInside" id="X7M-nc-rnf"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Giz-PO-yV2">
+                    <rect key="frame" x="20" y="86" width="374" height="31"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="AutoLayout IB"/>
+                    <connections>
+                        <action selector="autoLayoutIbButtonDidTap:" destination="-1" eventType="touchUpInside" id="yWB-NK-WIH"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWd-of-CBq">
+                    <rect key="frame" x="20" y="142" width="374" height="31"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="AutoLayout Code"/>
+                    <connections>
+                        <action selector="autoLayoutCodeButtonDidTap:" destination="-1" eventType="touchUpInside" id="O78-N7-xGd"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zh1-Z6-o2a">
+                    <rect key="frame" x="20" y="198" width="374" height="31"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Frames"/>
+                    <connections>
+                        <action selector="framesButtonDidTap:" destination="-1" eventType="touchUpInside" id="Ip2-Gh-hF3"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Zh1-Z6-o2a" firstAttribute="top" secondItem="yWd-of-CBq" secondAttribute="bottom" constant="25" id="7vB-dU-XCs"/>
+                <constraint firstItem="W0o-EV-CAL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="FwE-c5-j5Y"/>
+                <constraint firstItem="Giz-PO-yV2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="Pzm-gJ-NPR"/>
+                <constraint firstItem="W0o-EV-CAL" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="UKt-6C-Gct"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="W0o-EV-CAL" secondAttribute="trailing" constant="20" id="VLj-b1-dpa"/>
+                <constraint firstItem="Giz-PO-yV2" firstAttribute="top" secondItem="W0o-EV-CAL" secondAttribute="bottom" constant="25" id="aMg-ud-EMJ"/>
+                <constraint firstItem="yWd-of-CBq" firstAttribute="top" secondItem="Giz-PO-yV2" secondAttribute="bottom" constant="25" id="bgn-wR-d2D"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="yWd-of-CBq" secondAttribute="trailing" constant="20" id="cBX-bl-0sx"/>
+                <constraint firstItem="Zh1-Z6-o2a" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="egX-xh-e1b"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Giz-PO-yV2" secondAttribute="trailing" constant="20" id="ehs-pg-M4l"/>
+                <constraint firstItem="yWd-of-CBq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="oc9-Pp-1Rt"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Zh1-Z6-o2a" secondAttribute="trailing" constant="20" id="sJ6-aa-kZg"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="139"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
