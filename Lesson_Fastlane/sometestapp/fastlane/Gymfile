@@ -1,0 +1,4 @@
+workspace "sometestapp.xcworkspace"
+clean false
+silent false
+output_directory "output"

@@ -1,0 +1,35 @@
+stages:
+    - build
+    - distribute
+    
+# job
+build_app:
+    stage: build
+    tags: [ios]
+    artifacts:
+        expire_in: 2 weeks
+        paths:
+            - output/
+    only:
+        - master
+    script:
+        - source $HOME/.rvm/scripts/rvm
+        - rvm use ruby-2.6.0
+        - bundle install
+        - bundle exec fastlane build_ipa version:1.1 build:$CI_PIPELINE_IID
+        
+distribute_app:
+    stage: distribute
+    tags: [ios]
+    artifacts:
+        paths:
+            - output/
+    needs:
+        - job: build_app
+    variables:
+        ARTIFACTS_PATH: "output/"
+    script:
+        - source $HOME/.rvm/scripts/rvm
+        - rvm use ruby-2.6.0
+        - bundle install
+        - bundle exec fastlane distribute_firebase path:"$ARTIFACTS_PATH"

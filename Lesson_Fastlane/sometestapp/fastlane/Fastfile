@@ -1,0 +1,58 @@
+default_platform(:ios)
+
+platform :ios do
+  desc "Build ipa"
+  lane :build_ipa do |options|
+    updateProfiles()
+  
+    newVersion = options[:version]
+    newBuild = options[:build]
+
+    increment_version_number(
+        version_number: newVersion
+    )
+
+    increment_build_number(
+        build_number: newBuild
+    )
+    
+    updatePods()
+    build()
+  end
+  
+  desc "Distribute to Firebase App Distribution"
+  lane :distribute_firebase do |options|
+    path = Dir.pwd + "/../" + options[:path]
+    
+    Dir.chdir path do
+        ipa_path = path + Dir["*.ipa"].last
+    
+        firebase_app_distribution(
+            app: ENV["FIREBASE_APP_ID"],
+            firebase_cli_token: ENV["FIREBASE_CLI_TOKEN"],
+            ipa_path: ipa_path
+        )
+    end
+  end
+  
+  def updateProfiles
+    sigh(force: true)
+  end
+
+    def updatePods
+        cocoapods(
+            repo_update: true,
+            podfile: "./Podfile"
+        )
+    end
+    
+    def build
+    build_app(
+      workspace: "sometestapp.xcworkspace",
+      clean: true,
+      output_directory: "output",
+      output_name: "my-app.ipa",
+    )
+    end
+end
+
